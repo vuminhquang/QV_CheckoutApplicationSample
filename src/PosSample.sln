@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosApplication.Application.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosApplication.Test", "Apps\PosApplication.Test\PosApplication.Test.csproj", "{6C8705C6-E1EE-43A4-B01D-E77605AEF931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosApplication.Application.Kafka", "BuildingBlocks\PosApplication.Application.Kafka\PosApplication.Application.Kafka.csproj", "{EEF9FB5D-C928-4892-ABF4-45D600355A41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,7 @@ Global
 		{0E1A406B-F564-45DF-A04D-4B5AB3B50A57} = {D7FBA9FF-F223-402B-9C69-8093351507AB}
 		{D51A3C11-B95C-4624-ACD5-3C6A780ED1FB} = {D7FBA9FF-F223-402B-9C69-8093351507AB}
 		{6C8705C6-E1EE-43A4-B01D-E77605AEF931} = {352F85F4-6AE4-4180-A337-21806099C75E}
+		{EEF9FB5D-C928-4892-ABF4-45D600355A41} = {D7FBA9FF-F223-402B-9C69-8093351507AB}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9B7AC401-ED8E-401B-B554-C5B716186BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -61,5 +64,9 @@ Global
 		{6C8705C6-E1EE-43A4-B01D-E77605AEF931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C8705C6-E1EE-43A4-B01D-E77605AEF931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C8705C6-E1EE-43A4-B01D-E77605AEF931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF9FB5D-C928-4892-ABF4-45D600355A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF9FB5D-C928-4892-ABF4-45D600355A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF9FB5D-C928-4892-ABF4-45D600355A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF9FB5D-C928-4892-ABF4-45D600355A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

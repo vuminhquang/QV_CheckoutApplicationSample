@@ -2,14 +2,12 @@ using System.Diagnostics;
 using System.Text.Json;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using PosApplication.Application.Abstraction.Services;
 using PosApplication.Domain.Dtos;
 using PosApplication.Domain.Entities;
 using PosApplication.Test.Fixtures;
 using Xunit.Abstractions;
 using Xunit.Microsoft.DependencyInjection.Abstracts;
-using Xunit.Microsoft.DependencyInjection.Attributes;
 
 namespace PosApplication.Test;
 
@@ -48,7 +46,6 @@ public class BasketServiceUnitTest : TestBed<BasketServiceFixture>
     #endregion
 
     var services = _fixture.GetServiceProvider(_testOutputHelper);
-    //using var scope = services.CreateScope();
 
     var basketService = services.GetRequiredService<IBasketService>();
     var basket = JsonSerializer.Deserialize<Basket>(json);

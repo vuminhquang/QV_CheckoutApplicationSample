@@ -2,6 +2,7 @@
 using PosApplication.Application.Abstraction.Commands.Basket;
 using PosApplication.Application.Abstraction.Queries.Basket;
 using PosApplication.Application.Abstraction.Services;
+using PosApplication.Application.WithEvent.Commands.Basket;
 using PosApplication.Domain.Dtos;
 using PosApplication.Domain.Entities;
 using PosApplication.Shared.Exceptions;
@@ -24,6 +25,13 @@ public class BasketService : IBasketService
         EnsuringFields(basket);
         basket = await _mediator.Send(new BasketCreateCommand {Basket = basket});
         return basket;
+    }
+    
+    public async Task CreateBasketKafka(string guid, Basket basket)
+    {
+        UpdateBasketTotals(basket);
+        EnsuringFields(basket);
+        await _mediator.Send(new BasketKafkaCreateCommand {Guid = guid, Basket = basket});
     }
 
     public async Task<Basket> AddArticle(long id, Article article)

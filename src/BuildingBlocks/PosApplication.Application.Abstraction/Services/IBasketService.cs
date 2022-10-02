@@ -9,4 +9,5 @@ public interface IBasketService
     Task<Basket> AddArticle(long id, Article article);
     Task<Basket> RetrieveBasket(long id);
     Task<Basket> UpdateBasketStatus(long id, Status status);
+    Task CreateBasketKafka(string guid, Basket basket);
 }

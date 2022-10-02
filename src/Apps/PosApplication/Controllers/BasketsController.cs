@@ -70,4 +70,17 @@ public class BasketController : ControllerBase
         return Ok(basket)
             .WithHeaders(HeaderUtil.CreateEntityUpdateAlert(EntityName, basket.Id.ToString()));;
     }
+    
+    [HttpPost("kafka")]
+    public async Task<ActionResult<Basket>> CreateBasketKafka([FromBody] Basket basket)
+    {
+        _logger.LogDebug("REST request to save Basket : {@Basket}", basket);
+        if (basket.Id != 0)
+            throw new BadRequestAlertException("A new basket cannot already have an ID", EntityName, "idexists");
+
+        var guid = Guid.NewGuid().ToString();
+        await _basketService.CreateBasketKafka(guid, basket);
+        
+        return Ok($"Command Sent, guid: {guid}");
+    }
 }

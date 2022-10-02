@@ -4,19 +4,20 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>PosApplication.Application.WithEvent</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\PosApplication.Application.Abstraction\PosApplication.Application.Abstraction.csproj" />
-      <ProjectReference Include="..\PosApplication.Application.Kafka\PosApplication.Application.Kafka.csproj" />
       <ProjectReference Include="..\PosApplication.Domain\PosApplication.Domain.csproj" />
       <ProjectReference Include="..\PosApplication.Infrastructure\PosApplication.Infrastructure.csproj" />
       <ProjectReference Include="..\PosApplication.Shared\PosApplication.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MediatR" Version="11.0.0" />
+      <PackageReference Include="Confluent.Kafka" Version="1.9.3" />
       <PackageReference Include="VDG_EngineFramework" Version="1.0.0" />
+      <PackageReference Include="VDG_MultiThreadsEngine" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
